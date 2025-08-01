@@ -24,12 +24,14 @@ document.getElementById('playMusicBtn').addEventListener('click', () => {
   const iframe = document.createElement('iframe');
   iframe.width = 1;
   iframe.height = 1;
-  iframe.src = "https://www.youtube.com/embed/-oKaENv2QqM?autoplay=1&loop=1&playlist=-oKaENv2QqM";
+  iframe.src = "https://www.youtube.com/embed/-YzDsDMYqdw?autoplay=1&loop=1&playlist=-YzDsDMYqdw";
   iframe.allow = "autoplay; encrypted-media";
   iframe.frameBorder = 0;
+  iframe.style.border = 'none';
   document.getElementById('ytPlayer').appendChild(iframe);
   document.getElementById('playMusicBtn').style.display = 'none';
 });
+
 
 // Corações flutuando
 function criarCoracao() {
