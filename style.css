@@ -1,41 +1,110 @@
 body {
-  font-family: sans-serif;
-  text-align: center;
-  background-color: #fff0f5;
-  color: #333;
   margin: 0;
-  padding: 40px;
+  font-family: 'Georgia', serif;
+  background: linear-gradient(to right, #ffe0ec, #ffeaf5);
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  text-align: center;
+  overflow-x: hidden;
+  position: relative;
 }
 
 .container {
   max-width: 600px;
-  margin: auto;
-  background: #ffffff;
-  padding: 20px;
-  border-radius: 16px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  padding: 40px;
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 2s ease;
+}
+
+h1 {
+  color: #d63384;
+  margin-bottom: 20px;
+  min-height: 2.5em;
+}
+
+.intro {
+  font-size: 1.2em;
+  margin-bottom: 30px;
 }
 
 button {
-  background-color: #ff69b4;
+  background-color: #d63384;
   color: white;
-  padding: 10px 20px;
   border: none;
+  padding: 12px 20px;
+  font-size: 1em;
   border-radius: 10px;
   cursor: pointer;
-  margin-top: 20px;
+  transition: background 0.3s;
+  margin: 10px;
 }
 
 button:hover {
-  background-color: #ff85c1;
+  background-color: #b0256c;
 }
 
-.hidden {
-  display: none;
+#secret {
+  margin-top: 30px;
+  opacity: 0;
+  transition: opacity 1.2s ease;
+  max-height: 0;
+  overflow: hidden;
 }
 
-#secret img {
+#secret.show {
+  opacity: 1;
+  max-height: 500px;
+}
+
+.mensagem {
+  font-style: italic;
+  font-size: 1.3em;
+  margin-bottom: 20px;
+}
+
+img {
   max-width: 100%;
-  margin-top: 20px;
   border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+/* animação inicial */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* corações flutuando */
+.hearts-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.heart {
+  position: absolute;
+  font-size: 20px;
+  color: #ff4d6d;
+  animation: float 5s linear infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(100vh) scale(1);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(-10vh) scale(1.5);
+    opacity: 1;
+  }
 }

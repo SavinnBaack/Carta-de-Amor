@@ -8,14 +8,22 @@
 </head>
 <body>
   <div class="container">
-    <h1>Oi, meu amor ❤️</h1>
-    <p>Esse site é só nosso, feito com todo carinho do mundo!</p>
+    <h1 id="typewriter">Oi, meu amor ❤️</h1>
+    <p class="intro">Esse site é só nosso, feito com todo carinho do mundo!</p>
     <button id="revealBtn">Clique aqui pra ver uma surpresa</button>
+
     <div id="secret" class="hidden">
-      <p>Eu te amo mais do que consigo dizer em palavras...</p>
+      <p class="mensagem">Eu te amo mais do que consigo dizer em palavras...</p>
       <img src="sua-imagem.jpg" alt="Nosso momento" />
     </div>
+
+    <div id="musicSection">
+      <button id="playMusicBtn">🔊 Tocar música</button>
+    </div>
   </div>
+
+  <div id="ytPlayer" style="display:none;"></div>
+  <div class="hearts-container"></div>
 
   <script src="script.js"></script>
 </body>
